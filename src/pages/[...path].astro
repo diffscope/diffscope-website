@@ -1,0 +1,39 @@
+---
+/*
+ * SPDX-FileCopyrightText: Team OpenVPI
+ * SPDX-License-Identifier: MIT
+ */
+import PageLayout from '~/layouts/PageLayout.astro';
+import Home from '~/components/widgets/Home.astro';
+import { dictionaries, locales, type Locale } from '~/i18n';
+
+export function getStaticPaths() {
+  return locales.flatMap((locale) =>
+    ['', 'downloads', 'features', 'contribute', 'community'].map((page) => ({
+      params: { path: [locale === 'en' ? '' : locale, page].filter(Boolean).join('/') || undefined },
+      props: { locale, page },
+    }))
+  );
+}
+interface Props {
+  locale: Locale;
+  page: '' | 'downloads' | 'features' | 'contribute' | 'community';
+}
+const { locale, page } = Astro.props;
+const title = page ? dictionaries[locale].nav[page] : undefined;
+---
+
+<PageLayout locale={locale} page={page} title={title} noindex={Boolean(page)}>
+  {
+    page === '' ? (
+      <Home locale={locale} />
+    ) : page !== 'downloads' ? (
+      <section class="placeholder-page">
+        <>
+          <h1>{title}</h1>
+          <p>{dictionaries[locale].placeholder.body}</p>
+        </>
+      </section>
+    ) : null
+  }
+</PageLayout>

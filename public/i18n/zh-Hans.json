@@ -1,0 +1,92 @@
+{
+  "nav": {
+    "downloads": "下载",
+    "features": "功能",
+    "contribute": "参与贡献",
+    "community": "社区",
+    "docs": "文档"
+  },
+  "meta": {
+    "title": "DiffScope",
+    "description": "由 DiffSinger 驱动的自由且专业的歌声合成编辑器。"
+  },
+  "ui": {
+    "skip": "跳到正文",
+    "home": "DiffScope 首页",
+    "theme": "切换暗色模式",
+    "language": "选择语言",
+    "menu": "展开或收起导航",
+    "github": "在 GitHub 上查看 DiffScope",
+    "learnMore": "了解更多",
+    "getInvolved": "参与贡献",
+    "otherVersions": "下载其他版本",
+    "channels": "选择发布通道",
+    "comingSoon": "敬请期待",
+    "unsupported": "不支持当前系统",
+    "download": "下载",
+    "betaDownload": "下载（Beta）",
+    "nightlyDownload": "下载（Nightly）",
+    "stable": "稳定版",
+    "beta": "Beta 版",
+    "nightly": "Nightly 版"
+  },
+  "hero": {
+    "slogan": "自由且专业的\n歌声合成编辑器",
+    "powered": "由 DiffSinger 驱动",
+    "imageAlt": "笔记本电脑上的 DiffScope，展示轨道、音符、音素、音高曲线和合成参数编辑界面"
+  },
+  "features": {
+    "title": "为什么选择 DiffScope？",
+    "items": [
+      {
+        "title": "为歌声合成而生",
+        "description": "将编曲、音符、音素、参数编辑融入同一工作空间，为歌声合成打造专业、完整而专注的创作体验。"
+      },
+      {
+        "title": "开放的合成生态",
+        "description": "通过插件使用不同的歌声合成引擎、效果器与工具，根据创作需要自由组合，打造适合自己的工作流。"
+      },
+      {
+        "title": "与 AI 一起创作",
+        "description": "通过 MCP 将完整的编辑能力开放给 AI，让 AI 能够理解工程、编辑歌声并操作 DiffScope，成为真正参与创作的伙伴。"
+      }
+    ]
+  },
+  "contribute": {
+    "title": "属于每个人的创作工具",
+    "paragraphs": [
+      "DiffScope 是自由软件。任何人都可以自由地使用、研究和改进它，也可以创造属于自己的插件、工具与工作流。",
+      "我们相信，创作工具不应受到限制性许可证和封闭生态的束缚，产品的发展方向也应由创作者与开发者共同参与决定。",
+      "优秀的创作工具来自创作者与开发者的共同塑造。分享你的想法、报告问题、改进设计、编写代码。每一次参与，都可以让 DiffScope 更接近我们共同期待的创作工具。"
+    ]
+  },
+  "community": {
+    "title": "由 DiffSinger 社区驱动",
+    "paragraphs": [
+      "DiffScope 源自 DiffSinger 社区长期以来对歌声合成技术、工具与创作工作流的探索。",
+      "从 DiffSinger 的持续演进，到数据集制作、声码器、推理与部署工具，再到开放的工程格式与编辑器，社区的实践不断塑造着 DiffScope。它不仅是使用 DiffSinger 的编辑器，也是这些经验与技术逐渐汇聚成的创作平台。",
+      "我们希望让来自社区的新模型、新技术和新想法更容易走进实际的音乐创作，也让创作者的需求继续推动整个 DiffSinger 生态向前发展。"
+    ]
+  },
+  "cta": {
+    "title": "即刻体验 DiffScope"
+  },
+  "footer": {
+    "rights": "© Team OpenVPI",
+    "licenseBefore": "除非另有声明，网站内容以 ",
+    "licenseAfter": "许可。",
+    "licenseName": "CC BY-SA 4.0"
+  },
+  "notFound": {
+    "title": "找不到页面",
+    "description": "你访问的页面不存在。",
+    "back": "返回首页"
+  },
+  "languageName": "简体中文",
+  "announcement": {
+    "text": ""
+  },
+  "placeholder": {
+    "body": "TODO"
+  }
+}

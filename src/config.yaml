@@ -1,0 +1,24 @@
+# SPDX-FileCopyrightText: Team OpenVPI
+# SPDX-License-Identifier: MIT
+
+site:
+  name: DiffScope
+  site: 'https://diffscope.org'
+  base: '/'
+  trailingSlash: true
+metadata:
+  title:
+    default: DiffScope
+    template: '%s — DiffScope'
+  description: ''
+  robots:
+    index: true
+    follow: true
+i18n:
+  language: en
+  textDirection: ltr
+apps:
+  blog:
+    isEnabled: false
+ui:
+  theme: system

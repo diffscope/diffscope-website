@@ -1,0 +1,111 @@
+version = 1
+
+[[annotations]]
+path = ".gitignore"
+SPDX-FileCopyrightText = "Team OpenVPI"
+SPDX-License-Identifier = "MIT"
+
+[[annotations]]
+path = ".prettierignore"
+SPDX-FileCopyrightText = "Team OpenVPI"
+SPDX-License-Identifier = "MIT"
+
+[[annotations]]
+path = "README.md"
+SPDX-FileCopyrightText = "Team OpenVPI"
+SPDX-License-Identifier = "CC-BY-SA-4.0"
+
+[[annotations]]
+path = "package-lock.json"
+SPDX-FileCopyrightText = "Team OpenVPI"
+SPDX-License-Identifier = "MIT"
+
+[[annotations]]
+path = "package.json"
+SPDX-FileCopyrightText = "Team OpenVPI"
+SPDX-License-Identifier = "MIT"
+
+[[annotations]]
+path = "public/.nojekyll"
+SPDX-FileCopyrightText = "Team OpenVPI"
+SPDX-License-Identifier = "MIT"
+
+[[annotations]]
+path = "public/CNAME"
+SPDX-FileCopyrightText = "Team OpenVPI"
+SPDX-License-Identifier = "MIT"
+
+[[annotations]]
+path = "public/announcement.json"
+SPDX-FileCopyrightText = "Team OpenVPI"
+SPDX-License-Identifier = "MIT"
+
+[[annotations]]
+path = "public/brand/icon.png"
+SPDX-FileCopyrightText = "Team OpenVPI"
+SPDX-License-Identifier = "CC-BY-SA-4.0"
+
+[[annotations]]
+path = "public/brand/logo-dark.png"
+SPDX-FileCopyrightText = "Team OpenVPI"
+SPDX-License-Identifier = "CC-BY-SA-4.0"
+
+[[annotations]]
+path = "public/brand/logo-light.png"
+SPDX-FileCopyrightText = "Team OpenVPI"
+SPDX-License-Identifier = "CC-BY-SA-4.0"
+
+[[annotations]]
+path = "public/brand/social-preview.png"
+SPDX-FileCopyrightText = "Team OpenVPI"
+SPDX-License-Identifier = "CC-BY-SA-4.0"
+
+[[annotations]]
+path = "public/i18n/en.json"
+SPDX-FileCopyrightText = "Team OpenVPI"
+SPDX-License-Identifier = "CC-BY-SA-4.0"
+
+[[annotations]]
+path = "public/i18n/zh-Hans.json"
+SPDX-FileCopyrightText = "Team OpenVPI"
+SPDX-License-Identifier = "CC-BY-SA-4.0"
+
+[[annotations]]
+path = "public/robots.txt"
+SPDX-FileCopyrightText = "Team OpenVPI"
+SPDX-License-Identifier = "MIT"
+
+[[annotations]]
+path = "src/assets/icons/.gitkeep"
+SPDX-FileCopyrightText = "Team OpenVPI"
+SPDX-License-Identifier = "MIT"
+
+[[annotations]]
+path = "src/assets/images/diffscope-icon.png"
+SPDX-FileCopyrightText = "Team OpenVPI"
+SPDX-License-Identifier = "CC-BY-SA-4.0"
+
+[[annotations]]
+path = "src/assets/images/diffscope-mockup.png"
+SPDX-FileCopyrightText = "Team OpenVPI"
+SPDX-License-Identifier = "CC-BY-SA-4.0"
+
+[[annotations]]
+path = "src/assets/images/diffsinger-logo.svg"
+SPDX-FileCopyrightText = "Team OpenVPI"
+SPDX-License-Identifier = "CC-BY-SA-4.0"
+
+[[annotations]]
+path = "src/data/links.json"
+SPDX-FileCopyrightText = "Team OpenVPI"
+SPDX-License-Identifier = "MIT"
+
+[[annotations]]
+path = "tsconfig.json"
+SPDX-FileCopyrightText = "Team OpenVPI"
+SPDX-License-Identifier = "MIT"
+
+[[annotations]]
+path = "vendor/README.md"
+SPDX-FileCopyrightText = "Team OpenVPI"
+SPDX-License-Identifier = "CC-BY-SA-4.0"

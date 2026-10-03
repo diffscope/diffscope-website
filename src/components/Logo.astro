@@ -1,0 +1,16 @@
+---
+/*
+ * SPDX-FileCopyrightText: Team OpenVPI
+ * SPDX-License-Identifier: MIT
+ */
+interface Props {
+  compact?: boolean;
+  label: string;
+}
+const { compact = false, label } = Astro.props;
+---
+
+<span class:list={['brand-logo', { compact }]}>
+  <img class="logo-on-light" src="/brand/logo-dark.png" alt={label} width="3675" height="1024" />
+  <img class="logo-on-dark" src="/brand/logo-light.png" alt={label} width="3675" height="1024" />
+</span>

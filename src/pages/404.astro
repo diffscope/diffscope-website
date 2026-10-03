@@ -1,0 +1,20 @@
+---
+/*
+ * SPDX-FileCopyrightText: Team OpenVPI
+ * SPDX-License-Identifier: MIT
+ */
+import PageLayout from '~/layouts/PageLayout.astro';
+import Button from '~/components/ui/Button.astro';
+import { dictionaries } from '~/i18n';
+const t = dictionaries.en.notFound;
+---
+
+<PageLayout locale="en" title={t.title} noindex>
+  <section class="placeholder-page">
+    <p class="eyebrow">404</p><h1>{t.title}</h1><p>{t.description}</p><Button
+      href="/"
+      text={t.back}
+      class="outline-button"
+    />
+  </section>
+</PageLayout>

@@ -1,0 +1,108 @@
+---
+/*
+ * SPDX-FileCopyrightText: Team OpenVPI
+ * SPDX-License-Identifier: MIT
+ */
+import { Image, Picture } from 'astro:assets';
+import { Icon } from 'astro-icon/components';
+import mockup from '~/assets/images/diffscope-mockup.png';
+import appIcon from '~/assets/images/diffscope-icon.png';
+import diffSingerLogo from '~/assets/images/diffsinger-logo.svg';
+import Button from '~/components/ui/Button.astro';
+import Headline from '~/components/ui/Headline.astro';
+import WidgetWrapper from '~/components/ui/WidgetWrapper.astro';
+import DownloadButton from '~/components/common/DownloadButton.astro';
+import { dictionaries, localizePath, type Locale } from '~/i18n';
+import { featureIcons, site } from '~/data/site';
+interface Props {
+  locale: Locale;
+}
+const { locale } = Astro.props;
+const t = dictionaries[locale];
+const sections = [
+  { key: 'contribute', content: t.contribute, button: t.ui.getInvolved },
+  { key: 'community', content: t.community, button: t.ui.learnMore },
+];
+---
+
+<section id="download" class="hero-section">
+  <div class="hero-inner">
+    <div class="hero-copy">
+      <h1>
+        {t.hero.slogan}<span class="powered-line"
+          ><a href={site.diffSinger} target="_blank" rel="noopener noreferrer">{t.hero.powered}</a></span
+        >
+      </h1>
+      <div class="hero-download"><DownloadButton locale={locale} /></div>
+      <a class="other-versions" href={localizePath('downloads', locale)}
+        >{t.ui.otherVersions}<Icon name="tabler:arrow-right" class="size-4" /></a
+      >
+    </div>
+    <div class="hero-art">
+      <div class="art-glow" aria-hidden="true"></div>
+      <Picture
+        src={mockup}
+        formats={['avif', 'webp']}
+        widths={[560, 840, 1120, 1600]}
+        sizes="(min-width: 1120px) 58vw, (min-width: 760px) 80vw, 100vw"
+        alt={t.hero.imageAlt}
+        loading="eager"
+        fetchpriority="high"
+        class="product-mockup"
+      />
+    </div>
+  </div>
+</section>
+
+<WidgetWrapper id="why-diffscope" containerClass="section-container">
+  <Headline title={t.features.title} classes={{ title: 'section-title', container: 'section-heading' }} />
+  <div class="feature-grid">
+    {
+      t.features.items.map((feature, index) => (
+        <article class="feature-card">
+          <div class="feature-icon">
+            <Icon name={featureIcons[index]} class="size-12" />
+          </div>
+          <h3>{feature.title}</h3>
+          <p>{feature.description}</p>
+        </article>
+      ))
+    }
+  </div>
+  <div class="section-action">
+    <Button
+      href={localizePath('features', locale)}
+      text={t.ui.learnMore}
+      icon="tabler:arrow-right"
+      class="outline-button"
+    />
+  </div>
+</WidgetWrapper>
+
+{
+  sections.map(({ key, content, button }) => (
+    <WidgetWrapper id={key} containerClass="section-container story-container">
+      {key === 'community' && <Image src={diffSingerLogo} alt="" width={112} class="community-logo" />}
+      <Headline title={content.title} classes={{ title: 'section-title', container: 'section-heading' }} />
+      <div class="story-copy">
+        {content.paragraphs.map((paragraph) => (
+          <p>{paragraph}</p>
+        ))}
+      </div>
+      <div class="section-action">
+        <Button href={localizePath(key, locale)} text={button} icon="tabler:arrow-right" class="outline-button" />
+      </div>
+    </WidgetWrapper>
+  ))
+}
+
+<section id="try-diffscope" class="final-cta">
+  <div class="cta-inner">
+    <Image src={appIcon} alt="" width={96} height={96} widths={[96, 192]} sizes="96px" format="webp" class="cta-icon" />
+    <h2>{t.cta.title}</h2>
+    <DownloadButton locale={locale} />
+    <a class="other-versions" href={localizePath('downloads', locale)}
+      >{t.ui.otherVersions}<Icon name="tabler:arrow-right" class="size-4" /></a
+    >
+  </div>
+</section>

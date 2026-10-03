@@ -1,0 +1,92 @@
+{
+  "nav": {
+    "downloads": "Downloads",
+    "features": "Features",
+    "contribute": "Contribute",
+    "community": "Community",
+    "docs": "Docs"
+  },
+  "meta": {
+    "title": "DiffScope",
+    "description": "A free, professional singing-voice synthesis editor powered by DiffSinger."
+  },
+  "ui": {
+    "skip": "Skip to content",
+    "home": "DiffScope home",
+    "theme": "Toggle dark mode",
+    "language": "Choose language",
+    "menu": "Toggle navigation",
+    "github": "DiffScope on GitHub",
+    "learnMore": "Learn More",
+    "getInvolved": "Get Involved",
+    "otherVersions": "Download other versions",
+    "channels": "Choose a release channel",
+    "comingSoon": "Coming soon",
+    "unsupported": "Not supported on your system",
+    "download": "Download",
+    "betaDownload": "Download (Beta)",
+    "nightlyDownload": "Download (Nightly)",
+    "stable": "Stable",
+    "beta": "Beta",
+    "nightly": "Nightly"
+  },
+  "hero": {
+    "slogan": "A free, professional\nsinging-voice synthesis editor",
+    "powered": "powered by DiffSinger",
+    "imageAlt": "DiffScope on a laptop, showing tracks, notes, phonemes, pitch curves, and synthesis parameters"
+  },
+  "features": {
+    "title": "Why DiffScope?",
+    "items": [
+      {
+        "title": "Built for singing synthesis",
+        "description": "Arrange tracks and edit notes, phonemes, and parameters in one workspace. A professional, complete, and focused creative experience built for singing-voice synthesis."
+      },
+      {
+        "title": "An open synthesis ecosystem",
+        "description": "Use plugins to combine different singing synthesis engines, effects, and tools, and build a workflow that suits your creative needs."
+      },
+      {
+        "title": "Create alongside AI",
+        "description": "Through MCP, AI can access the full editor, understand your project, edit singing voices, and operate DiffScope — becoming a partner that takes part in the creative process."
+      }
+    ]
+  },
+  "contribute": {
+    "title": "A creative tool for everyone",
+    "paragraphs": [
+      "DiffScope is free software. Anyone can use, study, and improve it, or create their own plugins, tools, and workflows.",
+      "We believe creative tools should be free from restrictive licenses and closed ecosystems, with creators and developers helping to shape their direction.",
+      "Great creative tools are shaped by creators and developers together. Share your ideas, report issues, improve the design, or write code. Every contribution brings DiffScope closer to the creative tool we envision together."
+    ]
+  },
+  "community": {
+    "title": "Powered by the DiffSinger community",
+    "paragraphs": [
+      "DiffScope grew out of the DiffSinger community’s ongoing exploration of singing synthesis technology, tools, and creative workflows.",
+      "From the continued evolution of DiffSinger to dataset preparation, vocoders, inference and deployment tools, and open project formats and editors, the community’s work continues to shape DiffScope. More than an editor that uses DiffSinger, it is a creative platform where these experiences and technologies come together.",
+      "We want to bring new models, technologies, and ideas from the community into everyday music creation, while letting creators’ needs continue to move the whole DiffSinger ecosystem forward."
+    ]
+  },
+  "cta": {
+    "title": "Try DiffScope Now"
+  },
+  "footer": {
+    "rights": "© Team OpenVPI",
+    "licenseBefore": "Unless otherwise noted, website content is licensed under ",
+    "licenseAfter": ".",
+    "licenseName": "CC BY-SA 4.0"
+  },
+  "notFound": {
+    "title": "Page not found",
+    "description": "The page you are looking for does not exist.",
+    "back": "Back to home"
+  },
+  "languageName": "English",
+  "announcement": {
+    "text": ""
+  },
+  "placeholder": {
+    "body": "TODO"
+  }
+}

@@ -1,0 +1,76 @@
+---
+/*
+ * SPDX-FileCopyrightText: Team OpenVPI
+ * SPDX-License-Identifier: MIT
+ */
+import '~/assets/styles/tailwind.css';
+import '~/assets/styles/site.css';
+import CustomStyles from '~/components/CustomStyles.astro';
+import Announcement from '~/components/common/Announcement.astro';
+import Header from '~/components/widgets/Header.astro';
+import Footer from '~/components/widgets/Footer.astro';
+import { dictionaries, locales, localizePath, type Locale } from '~/i18n';
+interface Props {
+  locale: Locale;
+  page?: string;
+  title?: string;
+  noindex?: boolean;
+}
+const { locale, page = '', title, noindex = false } = Astro.props;
+const t = dictionaries[locale];
+const pageTitle = title ? `${title} — ${t.meta.title}` : t.meta.title;
+const canonical = new URL(localizePath(page || '/', locale), Astro.site);
+---
+
+<!doctype html>
+<html lang={locale} dir="ltr">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="generator" content={Astro.generator} />
+    <title>{pageTitle}</title>
+    <meta name="description" content={t.meta.description} />
+    {noindex && <meta name="robots" content="noindex, follow" />}
+    <link rel="canonical" href={canonical} />
+    {
+      locales.map((language) => (
+        <link rel="alternate" hreflang={language} href={new URL(localizePath(page || '/', language), Astro.site)} />
+      ))
+    }
+    <link rel="alternate" hreflang="x-default" href={new URL(localizePath(page || '/', 'en'), Astro.site)} />
+    <link rel="icon" type="image/png" href="/brand/icon.png" />
+    <meta property="og:title" content={pageTitle} />
+    <meta property="og:description" content={t.meta.description} />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content={t.meta.title} />
+    <meta property="og:url" content={canonical} />
+    <meta property="og:locale" content={locale === 'en' ? 'en_US' : 'zh_CN'} />
+    <meta property="og:image" content={new URL('/brand/social-preview.png', Astro.site)} />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <CustomStyles />
+    <script is:inline>
+      (() => {
+        let preference = null;
+        try {
+          preference = localStorage.getItem('diffscope-theme');
+        } catch {
+          /* Use system theme. */
+        }
+        document.documentElement.classList.toggle(
+          'dark',
+          preference === 'dark' || (preference !== 'light' && window.matchMedia('(prefers-color-scheme: dark)').matches)
+        );
+      })();
+    </script>
+    <slot name="head" />
+  </head>
+  <body>
+    <a class="skip-link" href="#main-content">{t.ui.skip}</a>
+    <Announcement locale={locale} />
+    <Header locale={locale} page={page} />
+    <main id="main-content" tabindex="-1"><slot /></main>
+    <Footer locale={locale} />
+  </body>
+</html>

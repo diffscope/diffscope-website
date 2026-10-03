@@ -1,0 +1,33 @@
+---
+/*
+ * SPDX-FileCopyrightText: Team OpenVPI
+ * SPDX-License-Identifier: MIT
+ */
+import { Icon } from 'astro-icon/components';
+import Logo from '~/components/Logo.astro';
+import { dictionaries, localizePath, type Locale } from '~/i18n';
+import { site } from '~/data/site';
+interface Props {
+  locale: Locale;
+}
+const { locale } = Astro.props;
+const t = dictionaries[locale];
+---
+
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <a href={localizePath('/', locale)} aria-label={t.ui.home}><Logo compact label={t.meta.title} /></a>
+    </div>
+    <div class="footer-legal">
+      <p><a href={site.owner}>{t.footer.rights}</a></p>
+      <p>
+        {t.footer.licenseBefore}
+        <a href={site.license} rel="license">{t.footer.licenseName}</a>{t.footer.licenseAfter}
+      </p>
+    </div>
+    <a class="icon-button footer-github" href={site.github} aria-label={t.ui.github}
+      ><Icon name="tabler:brand-github" class="size-6" /></a
+    >
+  </div>
+</footer>

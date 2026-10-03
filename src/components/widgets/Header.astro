@@ -1,0 +1,95 @@
+---
+/*
+ * SPDX-FileCopyrightText: Team OpenVPI
+ * SPDX-License-Identifier: MIT
+ */
+import { Icon } from 'astro-icon/components';
+import Logo from '~/components/Logo.astro';
+import DownloadButton from '~/components/common/DownloadButton.astro';
+import { dictionaries, locales, localeNames, localizePath, type Locale } from '~/i18n';
+import { site } from '~/data/site';
+interface Props {
+  locale: Locale;
+  page?: string;
+}
+const { locale, page = '' } = Astro.props;
+const t = dictionaries[locale];
+const links = Object.entries(t.nav).map(([key, label]) => ({
+  key,
+  label,
+  href: key === 'docs' ? site.docs : localizePath(key, locale),
+}));
+---
+
+<header class="site-header">
+  <div class="header-inner">
+    <a class="brand-link" href={localizePath('/', locale)} aria-label={t.ui.home}><Logo label={t.meta.title} /></a>
+    <nav class="desktop-nav" aria-label={t.ui.menu}>
+      {
+        links.map(({ key, label, href }) => (
+          <a href={href} aria-current={page === key ? 'page' : undefined}>
+            {label}
+            {key === 'docs' && <Icon name="tabler:arrow-up-right" class="size-3" />}
+          </a>
+        ))
+      }
+    </nav>
+    <div class="header-actions">
+      <details class="language-picker">
+        <summary class="icon-button" aria-label={t.ui.language}><Icon name="tabler:language" class="size-5" /></summary>
+        <div class="language-menu">
+          {
+            locales.map((language) => (
+              <a
+                href={localizePath(page || '/', language)}
+                lang={language}
+                hreflang={language}
+                aria-current={locale === language ? 'true' : undefined}
+              >
+                {localeNames[language]}
+                {locale === language && <Icon name="tabler:check" class="size-4" />}
+              </a>
+            ))
+          }
+        </div>
+      </details>
+      <button
+        class="icon-button theme-toggle"
+        type="button"
+        data-theme-toggle
+        aria-label={t.ui.theme}
+        aria-pressed="false"
+        ><Icon name="tabler:moon" class="size-5 theme-moon" /><Icon
+          name="tabler:sun"
+          class="size-5 theme-sun"
+        /></button
+      >
+      <a class="icon-button github-button" href={site.github} aria-label={t.ui.github}
+        ><Icon name="tabler:brand-github" class="size-5" /></a
+      >
+      <div class="header-download"><DownloadButton locale={locale} compact /></div>
+      <button
+        class="icon-button mobile-toggle"
+        type="button"
+        data-mobile-toggle
+        aria-label={t.ui.menu}
+        aria-expanded="false"
+        aria-controls="mobile-navigation"><Icon name="tabler:menu-2" class="size-6" /></button
+      >
+    </div>
+  </div>
+  <nav id="mobile-navigation" class="mobile-nav" aria-label={t.ui.menu} hidden>
+    {
+      links.map(({ key, label, href }) => (
+        <a href={href} aria-current={page === key ? 'page' : undefined}>
+          {label}
+          <Icon name="tabler:arrow-up-right" class="size-4" />
+        </a>
+      ))
+    }
+    <DownloadButton locale={locale} compact />
+  </nav>
+</header>
+<script>
+  import '~/scripts/header';
+</script>

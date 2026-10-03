@@ -1,0 +1,37 @@
+---
+/*
+ * SPDX-FileCopyrightText: Team OpenVPI
+ * SPDX-License-Identifier: MIT
+ */
+import announcement from '../../../public/announcement.json';
+import { dictionaries, type Locale } from '~/i18n';
+interface Props {
+  locale: Locale;
+}
+const { locale } = Astro.props;
+const text = dictionaries[locale].announcement.text;
+---
+
+<div class="announcement" data-announcement data-locale={locale} hidden={!announcement.enabled || !text}>
+  <p data-announcement-text>{text}</p>
+</div>
+<script>
+  const banner = document.querySelector<HTMLElement>('[data-announcement]');
+  if (banner) {
+    Promise.all(
+      ['/announcement.json', `/i18n/${banner.dataset.locale ?? 'en'}.json`].map((url) =>
+        fetch(url, { cache: 'no-cache' }).then((response) => (response.ok ? response.json() : null))
+      )
+    )
+      .then(([config, dictionary]) => {
+        if (!config || typeof config.enabled !== 'boolean' || !dictionary) return;
+        const value = dictionary.announcement?.text;
+        const text = banner.querySelector('[data-announcement-text]');
+        banner.hidden = !config.enabled || typeof value !== 'string' || !value.trim();
+        if (text && typeof value === 'string') text.textContent = value;
+      })
+      .catch(() => {
+        /* Keep the build-time announcement if the config is unavailable. */
+      });
+  }
+</script>
