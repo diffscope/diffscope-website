@@ -43,7 +43,9 @@ English uses the root path; Simplified Chinese uses `/zh-Hans/`. Each locale has
 
 Edit `public/i18n/en.json` and `public/i18n/zh-Hans.json` to update copy. Keep the same keys and section structure in every locale. These resources contain data only; components handle presentation and behavior.
 
-To add a language, create its JSON resource, register it in `src/i18n/index.ts`, and update the locale and sitemap settings in `astro.config.ts`. Add the localized text for every existing key, including accessibility labels and metadata. Language names come from each resource's `languageName` field.
+Visitors to unprefixed URLs are directed to the first supported language in their browser preferences. Chinese language tags resolve to Simplified Chinese, and unsupported languages fall back to English. Explicit `/zh-Hans/` URLs retain their language. A manual selection in the language menu is saved and takes priority over browser preferences on subsequent visits. Language changes preserve query parameters and section anchors. If local storage is unavailable, manual selections use a `lang` query parameter instead.
+
+To add a language, create its JSON resource, register it in `src/i18n/index.ts`, and add its identifier to `src/i18n/routing.mjs`. Astro and sitemap configuration share this locale list. Add the localized text for every existing key, including accessibility labels and metadata. Language names come from each resource's `languageName` field.
 
 ## Announcements
 

@@ -74,7 +74,7 @@
   "footer": {
     "rights": "© Team OpenVPI",
     "licenseBefore": "除非另有声明，网站内容以 ",
-    "licenseAfter": "许可。",
+    "licenseAfter": " 许可。",
     "licenseName": "CC BY-SA 4.0"
   },
   "notFound": {
@@ -84,7 +84,7 @@
   },
   "languageName": "简体中文",
   "announcement": {
-    "text": ""
+    "text": "本项目当前正在开发中。下载将在不久后可用。"
   },
   "placeholder": {
     "body": "TODO"

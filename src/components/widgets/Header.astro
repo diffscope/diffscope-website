@@ -44,6 +44,7 @@ const links = Object.entries(t.nav).map(([key, label]) => ({
                 href={localizePath(page || '/', language)}
                 lang={language}
                 hreflang={language}
+                data-language={language}
                 aria-current={locale === language ? 'true' : undefined}
               >
                 {localeNames[language]}

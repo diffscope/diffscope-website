@@ -50,6 +50,9 @@ const canonical = new URL(localizePath(page || '/', locale), Astro.site);
     <meta property="og:image:height" content="630" />
     <meta name="twitter:card" content="summary_large_image" />
     <CustomStyles />
+    <script>
+      import '~/scripts/language';
+    </script>
     <script is:inline>
       (() => {
         let preference = null;
