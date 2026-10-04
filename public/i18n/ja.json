@@ -1,0 +1,118 @@
+{
+  "nav": {
+    "downloads": "ダウンロード",
+    "features": "機能",
+    "contribute": "コントリビュート",
+    "community": "コミュニティ",
+    "docs": "ドキュメント"
+  },
+  "meta": {
+    "title": "DiffScope",
+    "description": "DiffSinger を搭載した、自由でプロフェッショナルな歌声合成エディター。"
+  },
+  "ui": {
+    "skip": "本文へスキップ",
+    "home": "DiffScope ホーム",
+    "theme": "ダークモードを切り替え",
+    "language": "言語を選択",
+    "menu": "ナビゲーションを開閉",
+    "github": "GitHub で DiffScope を見る",
+    "learnMore": "詳しく見る",
+    "getInvolved": "開発に参加",
+    "otherVersions": "ほかのバージョンをダウンロード",
+    "channels": "リリースチャンネルを選択",
+    "comingSoon": "近日公開",
+    "unsupported": "お使いのシステムには対応していません",
+    "download": "ダウンロード",
+    "betaDownload": "ダウンロード（Beta）",
+    "nightlyDownload": "ダウンロード（Nightly）",
+    "stable": "安定版",
+    "beta": "Beta 版",
+    "nightly": "Nightly 版"
+  },
+  "hero": {
+    "slogan": "自由でプロフェッショナルな\n歌声合成エディター",
+    "powered": "DiffSinger 搭載",
+    "imageAlt": "ノートパソコン上の DiffScope。トラック、音符、音素、ピッチカーブ、合成パラメーターの編集画面を表示"
+  },
+  "features": {
+    "title": "DiffScope を選ぶ理由",
+    "items": [
+      {
+        "title": "歌声合成のために設計",
+        "description": "トラック、音符、音素、パラメーターの編集をひとつのワークスペースに集約。歌声合成のための、プロフェッショナルで充実した制作環境を提供します。"
+      },
+      {
+        "title": "オープンな合成エコシステム",
+        "description": "プラグインを使って、さまざまな歌声合成エンジン、エフェクト、ツールを組み合わせ、制作スタイルに合ったワークフローを構築できます。"
+      },
+      {
+        "title": "AI とともに創作",
+        "description": "MCP を通じてエディターのすべての機能を AI に公開。AI がプロジェクトを理解し、歌声を編集して DiffScope を操作することで、創作に参加するパートナーになります。"
+      }
+    ]
+  },
+  "contribute": {
+    "title": "みんなのための創作ツール",
+    "paragraphs": [
+      "DiffScope は自由ソフトウェアです。誰でも自由に利用、研究、改良できるほか、自分だけのプラグイン、ツール、ワークフローを作ることもできます。",
+      "創作ツールは制限のあるライセンスや閉じたエコシステムに縛られるべきではなく、その進む方向はクリエイターと開発者がともに決めるべきだと私たちは考えています。",
+      "優れた創作ツールは、クリエイターと開発者がともに形作るものです。アイデアの共有、問題の報告、デザインの改善、コードの作成など、あらゆる参加が DiffScope を私たちの目指すツールへと近づけます。"
+    ]
+  },
+  "community": {
+    "title": "DiffSinger コミュニティとともに",
+    "paragraphs": [
+      "DiffScope は、歌声合成の技術、ツール、制作ワークフローを長年探求してきた DiffSinger コミュニティから生まれました。",
+      "DiffSinger の継続的な進化から、データセット制作、ボコーダー、推論・デプロイ用ツール、オープンなプロジェクト形式やエディターまで、コミュニティの取り組みが DiffScope を形作っています。DiffSinger を使うためのエディターにとどまらず、経験と技術が集結して生まれた創作プラットフォームです。",
+      "コミュニティの新しいモデル、技術、アイデアを実際の音楽制作に取り入れやすくし、クリエイターのニーズによって DiffSinger エコシステム全体が発展し続けることを目指しています。"
+    ]
+  },
+  "cta": {
+    "title": "DiffScope を今すぐ試す"
+  },
+  "footer": {
+    "rights": "© Team OpenVPI",
+    "licenseBefore": "特に記載がない限り、ウェブサイトのコンテンツは ",
+    "licenseAfter": " ライセンスで提供されています。",
+    "licenseName": "CC BY-SA 4.0"
+  },
+  "notFound": {
+    "title": "ページが見つかりません",
+    "description": "お探しのページは存在しません。",
+    "back": "ホームに戻る"
+  },
+  "languageName": "日本語",
+  "announcement": {
+    "text": "このプロジェクトは現在開発中です。ダウンロードは近日中に利用可能になります。"
+  },
+  "downloads": {
+    "title": "ダウンロード",
+    "products": "製品を選択",
+    "productDescriptions": {
+      "diffscope": "自由でプロフェッショナルな歌声合成エディター"
+    },
+    "loading": "リリースを読み込み中…",
+    "loadingVersion": "ダウンロード情報を読み込み中…",
+    "loadError": "リリースを読み込めませんでした。もう一度お試しください。",
+    "versionError": "ダウンロード情報を読み込めませんでした。もう一度お試しください。",
+    "retry": "再試行",
+    "downloadVersion": "v{version}{channel} をダウンロード",
+    "channelSuffix": { "stable": "", "beta": " (Beta)", "nightly": " (Nightly)" },
+    "unsupportedHint": "お使いのシステムには未対応 · すべてのダウンロードを見る",
+    "viewVersions": "すべてのバージョンを見る",
+    "noReleases": "このチャンネルには、まだダウンロードできるリリースがありません。",
+    "unsupportedWarning": "このチャンネルの最新リリースはお使いのシステムに対応していません。下記からほかのシステム向けのリリースを確認してダウンロードできます。",
+    "releaseNotes": "リリースノート",
+    "noReleaseNotes": "このバージョンのリリースノートはありません。",
+    "downloadFile": "{name} をダウンロード",
+    "fileDetails": "{size} · SHA-256: {checksum}",
+    "invalidRoute": "指定された製品またはバージョンは利用できません。",
+    "requiresJavaScript": "リリースの読み込みとファイルのダウンロードには JavaScript を有効にしてください。",
+    "variants": { "installer": "インストーラー", "portable": "ポータブル版", "debug_symbols": "デバッグシンボル" },
+    "platforms": { "windows": "Windows", "macos": "macOS", "linux": "Linux" }
+  },
+  "placeholder": {
+    "body": "準備中"
+  }
+}

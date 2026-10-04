@@ -68,7 +68,7 @@ const links = Object.entries(t.nav).map(([key, label]) => ({
       <a class="icon-button github-button" href={site.github} aria-label={t.ui.github}
         ><Icon name="tabler:brand-github" class="size-5" /></a
       >
-      <div class="header-download"><DownloadButton locale={locale} compact /></div>
+      <div class="header-download"><DownloadButton locale={locale} compact lazy={page === 'downloads'} /></div>
       <button
         class="icon-button mobile-toggle"
         type="button"
@@ -88,7 +88,7 @@ const links = Object.entries(t.nav).map(([key, label]) => ({
         </a>
       ))
     }
-    <DownloadButton locale={locale} compact />
+    <DownloadButton locale={locale} compact lazy={page === 'downloads'} />
   </nav>
 </header>
 <script>

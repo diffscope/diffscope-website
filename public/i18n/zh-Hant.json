@@ -1,0 +1,118 @@
+{
+  "nav": {
+    "downloads": "下載",
+    "features": "功能",
+    "contribute": "貢獻",
+    "community": "社群",
+    "docs": "文件"
+  },
+  "meta": {
+    "title": "DiffScope",
+    "description": "由 DiffSinger 驅動的自由且專業的歌聲合成編輯器。"
+  },
+  "ui": {
+    "skip": "跳至主要內容",
+    "home": "DiffScope 首頁",
+    "theme": "切換深色模式",
+    "language": "選擇語言",
+    "menu": "展開或收合導覽列",
+    "github": "在 GitHub 上查看 DiffScope",
+    "learnMore": "進一步了解",
+    "getInvolved": "參與貢獻",
+    "otherVersions": "下載其他版本",
+    "channels": "選擇發布通道",
+    "comingSoon": "即將推出",
+    "unsupported": "不支援目前的作業系統",
+    "download": "下載",
+    "betaDownload": "下載（Beta）",
+    "nightlyDownload": "下載（Nightly）",
+    "stable": "穩定版",
+    "beta": "Beta 版",
+    "nightly": "Nightly 版"
+  },
+  "hero": {
+    "slogan": "自由且專業的\n歌聲合成編輯器",
+    "powered": "由 DiffSinger 驅動",
+    "imageAlt": "筆記型電腦上的 DiffScope，畫面顯示音軌、音符、音素、音高曲線與合成參數編輯介面"
+  },
+  "features": {
+    "title": "為什麼選擇 DiffScope？",
+    "items": [
+      {
+        "title": "專為歌聲合成打造",
+        "description": "將編曲、音符、音素與參數編輯整合在同一個工作空間，為歌聲合成打造專業、完整且專注的創作體驗。"
+      },
+      {
+        "title": "開放的合成生態系",
+        "description": "透過外掛使用不同的歌聲合成引擎、效果器與工具，依照創作需求自由搭配，打造適合自己的工作流程。"
+      },
+      {
+        "title": "與 AI 一起創作",
+        "description": "透過 MCP 開放完整的編輯功能，讓 AI 理解專案、編輯歌聲並操作 DiffScope，成為真正參與創作的夥伴。"
+      }
+    ]
+  },
+  "contribute": {
+    "title": "屬於每個人的創作工具",
+    "paragraphs": [
+      "DiffScope 是自由軟體。任何人都可以自由使用、研究與改良，也可以打造自己的外掛、工具與工作流程。",
+      "我們相信，創作工具不該受到限制性授權條款與封閉生態系的束縛，產品的發展方向也應由創作者與開發者共同參與決定。",
+      "優秀的創作工具來自創作者與開發者共同打造。分享想法、回報問題、改進設計或撰寫程式碼，每一次參與，都能讓 DiffScope 更接近我們共同期待的創作工具。"
+    ]
+  },
+  "community": {
+    "title": "由 DiffSinger 社群驅動",
+    "paragraphs": [
+      "DiffScope 源自 DiffSinger 社群長期以來對歌聲合成技術、工具與創作工作流程的探索。",
+      "從 DiffSinger 持續演進，到資料集製作、聲碼器、推論與部署工具，再到開放的專案格式與編輯器，社群的實踐不斷形塑 DiffScope。它不只是使用 DiffSinger 的編輯器，也是這些經驗與技術逐漸匯聚而成的創作平台。",
+      "我們希望讓社群的新模型、新技術與新點子更容易應用於實際的音樂創作，也讓創作者的需求持續推動整個 DiffSinger 生態系向前發展。"
+    ]
+  },
+  "cta": {
+    "title": "立即體驗 DiffScope"
+  },
+  "footer": {
+    "rights": "© Team OpenVPI",
+    "licenseBefore": "除非另有註明，網站內容採用 ",
+    "licenseAfter": " 授權。",
+    "licenseName": "CC BY-SA 4.0"
+  },
+  "notFound": {
+    "title": "找不到頁面",
+    "description": "您要瀏覽的頁面不存在。",
+    "back": "返回首頁"
+  },
+  "languageName": "繁體中文",
+  "announcement": {
+    "text": "本專案目前仍在開發中，下載功能即將開放。"
+  },
+  "downloads": {
+    "title": "下載",
+    "products": "選擇產品",
+    "productDescriptions": {
+      "diffscope": "自由且專業的歌聲合成編輯器"
+    },
+    "loading": "正在載入發布版本…",
+    "loadingVersion": "正在載入下載資訊…",
+    "loadError": "無法載入發布版本，請重試。",
+    "versionError": "無法載入下載資訊，請重試。",
+    "retry": "重試",
+    "downloadVersion": "下載 v{version}{channel}",
+    "channelSuffix": { "stable": "", "beta": " (Beta)", "nightly": " (Nightly)" },
+    "unsupportedHint": "目前的作業系統不受支援 · 查看所有下載",
+    "viewVersions": "查看所有版本",
+    "noReleases": "此通道目前沒有可下載的版本。",
+    "unsupportedWarning": "此通道的最新版本不支援目前的作業系統。您仍可在下方查看並下載其他作業系統的版本。",
+    "releaseNotes": "版本說明",
+    "noReleaseNotes": "此版本目前沒有版本說明。",
+    "downloadFile": "下載 {name}",
+    "fileDetails": "{size} · SHA-256：{checksum}",
+    "invalidRoute": "指定的產品或版本無法使用。",
+    "requiresJavaScript": "請啟用 JavaScript 以載入發布版本並下載檔案。",
+    "variants": { "installer": "安裝程式", "portable": "免安裝版", "debug_symbols": "偵錯符號" },
+    "platforms": { "windows": "Windows", "macos": "macOS", "linux": "Linux" }
+  },
+  "placeholder": {
+    "body": "準備中"
+  }
+}

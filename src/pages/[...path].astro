@@ -5,6 +5,7 @@
  */
 import PageLayout from '~/layouts/PageLayout.astro';
 import Home from '~/components/widgets/Home.astro';
+import Downloads from '~/components/widgets/Downloads.astro';
 import { dictionaries, locales, type Locale } from '~/i18n';
 import { pages } from '~/i18n/routing.mjs';
 
@@ -24,17 +25,19 @@ const { locale, page } = Astro.props;
 const title = page ? dictionaries[locale].nav[page] : undefined;
 ---
 
-<PageLayout locale={locale} page={page} title={title} noindex={Boolean(page)}>
+<PageLayout locale={locale} page={page} title={title} noindex={Boolean(page && page !== 'downloads')}>
   {
     page === '' ? (
       <Home locale={locale} />
-    ) : page !== 'downloads' ? (
+    ) : page === 'downloads' ? (
+      <Downloads locale={locale} />
+    ) : (
       <section class="placeholder-page">
         <>
           <h1>{title}</h1>
           <p>{dictionaries[locale].placeholder.body}</p>
         </>
       </section>
-    ) : null
+    )
   }
 </PageLayout>

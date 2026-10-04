@@ -3,11 +3,17 @@
  * SPDX-License-Identifier: MIT
  */
 
-/** @type {readonly ['en', 'zh-Hans']} */
-export const locales = ['en', 'zh-Hans'];
+/** @type {readonly ['en', 'zh-Hans', 'zh-Hant', 'ja']} */
+export const locales = ['en', 'zh-Hans', 'zh-Hant', 'ja'];
 export const defaultLocale = 'en';
 export const pages = ['', 'downloads', 'features', 'contribute', 'community'];
 export const localePreferenceKey = 'diffscope-locale';
+
+/** @param {string} locale */
+export function toOpenGraphLocale(locale) {
+  const { language, region } = new Intl.Locale(locale).maximize();
+  return region ? `${language}_${region}` : language;
+}
 
 /**
  * @param {string} path
@@ -22,9 +28,20 @@ export function matchBrowserLocale(languages) {
     const normalized = language.toLowerCase().replaceAll('_', '-');
     const exact = locales.find((locale) => locale.toLowerCase() === normalized);
     if (exact) return exact;
-    const base = normalized.split('-')[0];
-    const related = locales.find((locale) => locale.toLowerCase().split('-')[0] === base);
-    if (related) return related;
+    try {
+      const preferred = new Intl.Locale(normalized).maximize();
+      const scriptMatch = locales.find((locale) => {
+        const supported = new Intl.Locale(locale).maximize();
+        return supported.language === preferred.language && supported.script === preferred.script;
+      });
+      if (scriptMatch) return scriptMatch;
+      const baseMatches = locales.filter((locale) => locale.toLowerCase().split('-')[0] === preferred.language);
+      if (baseMatches.length) return baseMatches[0];
+    } catch {
+      const base = normalized.split('-')[0];
+      const related = locales.find((locale) => locale.toLowerCase().split('-')[0] === base);
+      if (related) return related;
+    }
   }
   return defaultLocale;
 }

@@ -1,0 +1,5 @@
+{
+  "catalogBaseUrl": "https://catalogs.diffscope.org/v1",
+  "defaultProduct": "diffscope",
+  "products": [{ "id": "diffscope", "name": "DiffScope", "icon": "/brand/icon.png" }]
+}

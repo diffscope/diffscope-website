@@ -8,8 +8,15 @@ import test from 'node:test';
 import { getLanguageRedirect, matchBrowserLocale } from '../src/i18n/routing.mjs';
 
 test('browser preferences match supported languages in priority order', () => {
-  for (const tag of ['zh', 'zh-CN', 'zh-SG', 'zh-Hans-CN', 'zh-TW', 'ZH-cn']) {
-    assert.equal(matchBrowserLocale([tag]), 'zh-Hans', tag);
+  for (const [tag, expected] of Object.entries({
+    zh: 'zh-Hans',
+    'zh-CN': 'zh-Hans',
+    'zh-SG': 'zh-Hans',
+    'zh-Hans-CN': 'zh-Hans',
+    'zh-TW': 'zh-Hant',
+    'ZH-cn': 'zh-Hans',
+  })) {
+    assert.equal(matchBrowserLocale([tag]), expected, tag);
   }
   assert.equal(matchBrowserLocale(['en-US', 'zh-CN']), 'en');
   assert.equal(matchBrowserLocale(['de-DE', 'zh-CN', 'en']), 'zh-Hans');

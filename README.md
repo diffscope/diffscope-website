@@ -1,6 +1,6 @@
 # DiffScope website
 
-The bilingual DiffScope website at [diffscope.org](https://diffscope.org), built with Astro, AstroWind, Tailwind CSS, and Tabler icons. It is generated as a static site and deployed to GitHub Pages.
+The multilingual DiffScope website at [diffscope.org](https://diffscope.org), built with Astro, AstroWind, Tailwind CSS, and Tabler icons. It is generated as a static site and deployed to GitHub Pages.
 
 ## Development
 
@@ -37,13 +37,22 @@ npm run preview
 | `src/assets/`                       | Styles and source images                                                                      |
 | `vendor/integration/`               | Site configuration integration                                                                |
 
-English uses the root path; Simplified Chinese uses `/zh-Hans/`. Each locale has home, downloads, features, contribute, and community routes. The downloads page has no body content, and the other secondary pages display a title and a placeholder until their content is published. Documentation is hosted separately at [docs.diffscope.org](https://docs.diffscope.org/).
+Each locale has home, downloads, features, contribute, and community routes. Features, contribute, and community display a title and a placeholder until their content is published. Documentation is hosted separately at [docs.diffscope.org](https://docs.diffscope.org/).
 
 ## Content and localization
 
-Edit `public/i18n/en.json` and `public/i18n/zh-Hans.json` to update copy. Keep the same keys and section structure in every locale. These resources contain data only; components handle presentation and behavior.
+### Supported languages
 
-Visitors to unprefixed URLs are directed to the first supported language in their browser preferences. Chinese language tags resolve to Simplified Chinese, and unsupported languages fall back to English. Explicit `/zh-Hans/` URLs retain their language. A manual selection in the language menu is saved and takes priority over browser preferences on subsequent visits. Language changes preserve query parameters and section anchors. If local storage is unavailable, manual selections use a `lang` query parameter instead.
+| Language                     | Locale    | URL         |
+| ---------------------------- | --------- | ----------- |
+| English                      | `en`      | `/`         |
+| Simplified Chinese           | `zh-Hans` | `/zh-Hans/` |
+| Traditional Chinese (Taiwan) | `zh-Hant` | `/zh-Hant/` |
+| Japanese                     | `ja`      | `/ja/`      |
+
+Edit the locale resources in `public/i18n/` to update copy. Keep the same keys and section structure in every locale. These resources contain data only; components handle presentation and behavior.
+
+Visitors to unprefixed URLs are directed to a supported language based on their browser preferences. Explicit locale-prefixed URLs retain their language. A manual selection in the language menu is saved and takes priority over browser preferences on subsequent visits. Language changes preserve query parameters and section anchors. If local storage is unavailable, manual selections use a `lang` query parameter instead.
 
 To add a language, create its JSON resource, register it in `src/i18n/index.ts`, and add its identifier to `src/i18n/routing.mjs`. Astro and sitemap configuration share this locale list. Add the localized text for every existing key, including accessibility labels and metadata. Language names come from each resource's `languageName` field.
 
@@ -55,9 +64,15 @@ Announcements are rendered during the build. The browser also fetches the announ
 
 ## Downloads
 
-The release catalog in `src/utils/downloads.mjs` is currently empty. Populate it when releases become available. The download controls distinguish unavailable channels from channels that do not support the visitor's system.
+Configure the catalog URL, enabled products, their display names and icons, and the default product in `src/data/downloads.json`. Products not in this list are never fetched or displayed. The production catalog is `https://catalogs.diffscope.org/v1`.
 
-For a supported system, the primary button selects Stable, then Beta, then Nightly. Platform detection supports Windows, macOS, and Linux. Mobile and unknown systems are treated as unsupported. Keep release selection independent of the interface and update its tests when changing this behavior.
+Each product provides `index.json` for Stable and Beta and `nightly.json` for Nightly. Each channel's first version entry is its latest release. Manifest paths are resolved relative to their index URL. Manifests supply release notes and download URLs, platforms, architectures, variants, sizes, and SHA-256 checksums.
+
+The home page awaits both indexes and their latest manifests before displaying download details. All download controls share request caches. The primary button prefers a compatible latest release in Stable, then Beta, then Nightly. If none supports the visitor's system, it offers the first available release and links to the downloads page instead of downloading a file. No releases results in a disabled Coming Soon button; request failures offer a retry.
+
+On the downloads page, selecting a product loads its indexes and latest manifests to choose a compatible default tab and display platform warnings. Other manifests load only when their version cards are opened. The header download menu on this page loads only when opened. A hash of `#diffscope` selects the product; `#diffscope/1.0.0` also selects its channel and opens that version. Product and version identifiers are URL-encoded. Explicit version routes take priority over automatic channel selection.
+
+Windows, macOS, and Linux use their standard display names from locale resources; other platform labels and all architecture labels preserve manifest values. The `installer`, `portable`, and `debug_symbols` variants are translated; unknown variants are displayed unchanged. Automatic download selection uses browser platform and architecture hints where available, prefers installers, and excludes source archives and debug symbols. When the architecture cannot be determined unambiguously, visitors choose a file on the downloads page. Keep release selection independent of the interface and update its tests when changing this behavior.
 
 ## Deployment
 

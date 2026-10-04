@@ -23,15 +23,24 @@ if (destination) {
   currentUrl.pathname = destination;
   location.replace(currentUrl.href);
 } else {
-  document.querySelectorAll<HTMLAnchorElement>('[data-language]').forEach((link) => {
+  const links = document.querySelectorAll<HTMLAnchorElement>('[data-language]');
+  const updateLink = (link: HTMLAnchorElement) => {
     const targetUrl = new URL(link.href);
     targetUrl.search = location.search;
     targetUrl.searchParams.delete('lang');
     targetUrl.hash = location.hash;
     link.href = targetUrl.href;
+  };
+  const updateLinks = () => links.forEach(updateLink);
+  updateLinks();
+  document.querySelector<HTMLDetailsElement>('.language-picker')?.addEventListener('toggle', updateLinks);
+  window.addEventListener('hashchange', updateLinks);
+  window.addEventListener('popstate', updateLinks);
+  links.forEach((link) => {
     link.addEventListener('click', () => {
       const locale = link.dataset.language;
       if (!locale || !locales.some((supported) => supported === locale)) return;
+      updateLink(link);
       try {
         localStorage.setItem(localePreferenceKey, locale);
       } catch {

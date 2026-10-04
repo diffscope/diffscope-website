@@ -21,7 +21,7 @@
     "getInvolved": "Get Involved",
     "otherVersions": "Download other versions",
     "channels": "Choose a release channel",
-    "comingSoon": "Coming soon",
+    "comingSoon": "Coming Soon",
     "unsupported": "Not supported on your system",
     "download": "Download",
     "betaDownload": "Download (Beta)",
@@ -85,6 +85,32 @@
   "languageName": "English",
   "announcement": {
     "text": "This project is currently under development. Downloads will be available soon."
+  },
+  "downloads": {
+    "title": "Downloads",
+    "products": "Choose a product",
+    "productDescriptions": {
+      "diffscope": "A free, professional singing-voice synthesis editor"
+    },
+    "loading": "Loading releases…",
+    "loadingVersion": "Loading download details…",
+    "loadError": "Releases could not be loaded. Please try again.",
+    "versionError": "Download details could not be loaded. Please try again.",
+    "retry": "Retry",
+    "downloadVersion": "Download v{version}{channel}",
+    "channelSuffix": { "stable": "", "beta": " (Beta)", "nightly": " (Nightly)" },
+    "unsupportedHint": "Not supported on your system · View all downloads",
+    "viewVersions": "View all versions",
+    "noReleases": "No releases are available in this channel yet.",
+    "unsupportedWarning": "The latest release in this channel does not support your system. Downloads for other systems are listed below.",
+    "releaseNotes": "Release notes",
+    "noReleaseNotes": "Release notes are not available for this version.",
+    "downloadFile": "Download {name}",
+    "fileDetails": "{size} · SHA-256: {checksum}",
+    "invalidRoute": "The requested product or version is not available.",
+    "requiresJavaScript": "Enable JavaScript to load releases and download files.",
+    "variants": { "installer": "Installer", "portable": "Portable", "debug_symbols": "Debug Symbols" },
+    "platforms": { "windows": "Windows", "macos": "macOS", "linux": "Linux" }
   },
   "placeholder": {
     "body": "TODO"

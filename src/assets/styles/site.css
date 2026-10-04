@@ -615,14 +615,6 @@ summary::-webkit-details-marker {
   color: var(--aw-color-text-muted);
   margin-bottom: 26px;
 }
-html[lang='zh-Hans'] .hero-copy h1 {
-  font-size: clamp(36px, 3.7vw, 51px);
-  letter-spacing: -0.025em;
-  line-height: 1.35;
-}
-html[lang='zh-Hans'] .eyebrow {
-  letter-spacing: 0.12em;
-}
 @media (max-width: 1119px) {
   .desktop-nav,
   .header-download {
@@ -769,9 +761,6 @@ html[lang='zh-Hans'] .eyebrow {
     margin: 0;
     text-align: left;
     width: 100%;
-  }
-  html[lang='zh-Hans'] .hero-copy h1 {
-    font-size: clamp(33px, 8vw, 49px);
   }
 }
 @media (max-width: 360px) {

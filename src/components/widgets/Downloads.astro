@@ -1,0 +1,89 @@
+---
+/*
+ * SPDX-FileCopyrightText: Team OpenVPI
+ * SPDX-License-Identifier: MIT
+ */
+import { Icon } from 'astro-icon/components';
+import { dictionaries, type Locale } from '~/i18n';
+import configuration from '~/data/downloads.json';
+import { channels } from '~/utils/downloads.mjs';
+interface Props {
+  locale: Locale;
+}
+const { locale } = Astro.props;
+const t = dictionaries[locale];
+const productDescriptions: Record<string, string> = t.downloads.productDescriptions;
+---
+
+<ds-downloads-page
+  class="downloads-page"
+  data-locale={locale}
+  data-strings={JSON.stringify({ ui: t.ui, downloads: t.downloads })}
+>
+  <h1>{t.downloads.title}</h1>
+  <div class="downloads-layout">
+    <aside class="products-sidebar">
+      <fieldset class="product-picker">
+        <legend class="sr-only">{t.downloads.products}</legend>
+        {
+          configuration.products.map((product) => (
+            <label class="product-entry" title={productDescriptions[product.id]}>
+              <img src={product.icon} width="36" height="36" alt="" />
+              <span>{product.name}</span>
+              <input
+                type="radio"
+                name="download-product"
+                value={product.id}
+                aria-description={productDescriptions[product.id]}
+                checked={product.id === configuration.defaultProduct}
+              />
+            </label>
+          ))
+        }
+      </fieldset>
+    </aside>
+    <section class="releases-panel" aria-label={t.downloads.title}>
+      <div class="release-tabs" role="tablist" aria-label={t.ui.channels}>
+        {
+          channels.map((channel, index) => (
+            <button
+              type="button"
+              role="tab"
+              id={`tab-${channel}`}
+              aria-selected={index === 0}
+              aria-controls="release-list"
+              tabindex={index === 0 ? 0 : -1}
+              data-release-channel={channel}
+              disabled
+            >
+              {t.ui[channel]}
+            </button>
+          ))
+        }
+      </div>
+      <div class="download-notice" data-route-warning role="status" hidden></div>
+      <div class="download-notice support-warning" data-platform-warning role="status" hidden>
+        <Icon name="tabler:alert-triangle" class="size-5" /><p>{t.downloads.unsupportedWarning}</p>
+      </div>
+      <div class="download-state" data-page-state role="status" aria-live="polite">
+        <span class="loading-spinner" aria-hidden="true"></span><span>{t.downloads.loading}</span>
+      </div>
+      <div
+        id="release-list"
+        class="release-list"
+        role="tabpanel"
+        aria-labelledby="tab-stable"
+        aria-busy="true"
+        tabindex="0"
+      >
+      </div>
+    </section>
+  </div>
+  <template data-download-icon><Icon name="tabler:download" class="size-5" /></template>
+  <template data-external-link-icon><Icon name="tabler:arrow-up-right" class="size-3" aria-hidden="true" /></template>
+  <template data-chevron-icon><Icon name="tabler:chevron-down" class="size-5" /></template>
+  <noscript><p class="download-state">{t.downloads.requiresJavaScript}</p></noscript>
+</ds-downloads-page>
+<script>
+  import '~/scripts/downloads-page';
+</script>

@@ -4,22 +4,33 @@
  * SPDX-License-Identifier: MIT
  */
 import { Icon } from 'astro-icon/components';
-import { dictionaries, type Locale } from '~/i18n';
+import { dictionaries, localizePath, type Locale } from '~/i18n';
 import { channels } from '~/utils/downloads.mjs';
 interface Props {
   locale: Locale;
   compact?: boolean;
+  lazy?: boolean;
 }
-const { locale, compact = false } = Astro.props;
+const { locale, compact = false, lazy = false } = Astro.props;
 const t = dictionaries[locale].ui;
+const strings = dictionaries[locale];
 const id = `channels-${crypto.randomUUID()}`;
 ---
 
-<ds-download class:list={['download-control', { 'download-compact': compact }]} data-strings={JSON.stringify(t)}>
+<ds-download
+  class:list={['download-control', { 'download-compact': compact }]}
+  data-strings={JSON.stringify({ ui: t, downloads: strings.downloads })}
+  data-page={localizePath('downloads', locale)}
+  data-lazy={String(lazy)}
+  data-compact={String(compact)}
+>
   <div class="download-split">
-    <button class="download-main" type="button" disabled data-download-main>
+    <button class="download-main" type="button" disabled={!lazy} data-download-main aria-busy={!lazy}>
       <Icon name="tabler:download" class="download-icon" />
-      <span data-download-label>{t.comingSoon}</span>
+      <span class="download-labels">
+        <span data-download-label>{compact || lazy ? t.download : strings.downloads.loading}</span>
+        <span class="download-subtitle" data-download-subtitle>{lazy ? strings.downloads.viewVersions : ''}</span>
+      </span>
     </button>
     <details class="download-details" data-download-details>
       <summary aria-label={t.channels} aria-controls={id}>
@@ -30,7 +41,7 @@ const id = `channels-${crypto.randomUUID()}`;
           channels.map((channel) => (
             <button type="button" class="channel-option" data-channel={channel} disabled>
               <span class="channel-name">{t[channel]}</span>
-              <span class="channel-status">{t.comingSoon}</span>
+              <span class="channel-status">{strings.downloads.loading}</span>
             </button>
           ))
         }
@@ -39,52 +50,5 @@ const id = `channels-${crypto.randomUUID()}`;
   </div>
 </ds-download>
 <script>
-  import { catalog, detectPlatform, resolveDownloads, type Channel } from '~/utils/downloads.mjs';
-  import type { Dictionary } from '~/i18n';
-
-  class DownloadControl extends HTMLElement {
-    connectedCallback() {
-      const t: Dictionary['ui'] = JSON.parse(this.dataset.strings ?? '{}');
-      const platform =
-        /Macintosh/i.test(navigator.userAgent) && navigator.maxTouchPoints > 1
-          ? 'unknown'
-          : detectPlatform(navigator.userAgent);
-      const result = resolveDownloads(catalog, platform);
-      const main = this.querySelector<HTMLButtonElement>('[data-download-main]');
-      const label = this.querySelector('[data-download-label]');
-      const names = { stable: t.download, beta: t.betaDownload, nightly: t.nightlyDownload };
-      if (main && label) {
-        label.textContent = result.preferred
-          ? names[result.preferred.channel]
-          : t[result.status as 'comingSoon' | 'unsupported'];
-        main.disabled = !result.preferred;
-        main.addEventListener('click', () => {
-          if (result.preferred?.url) location.assign(result.preferred.url);
-        });
-      }
-      result.entries.forEach((entry) => {
-        const button = this.querySelector<HTMLButtonElement>(`[data-channel="${entry.channel as Channel}"]`);
-        if (!button) return;
-        button.disabled = !entry.url;
-        const status = button.querySelector('.channel-status');
-        if (status) status.textContent = entry.url ? t.download : t[entry.status as 'comingSoon' | 'unsupported'];
-        button.addEventListener('click', () => {
-          if (entry.url) location.assign(entry.url);
-        });
-      });
-    }
-  }
-  if (!customElements.get('ds-download')) customElements.define('ds-download', DownloadControl);
-  document.addEventListener('click', (event) => {
-    document.querySelectorAll<HTMLDetailsElement>('[data-download-details][open]').forEach((details) => {
-      if (!details.contains(event.target as Node)) details.open = false;
-    });
-  });
-  document.addEventListener('keydown', (event) => {
-    if (event.key !== 'Escape') return;
-    document.querySelectorAll<HTMLDetailsElement>('[data-download-details][open]').forEach((details) => {
-      if (details.contains(document.activeElement)) details.querySelector('summary')?.focus();
-      details.open = false;
-    });
-  });
+  import '~/scripts/download-button';
 </script>
