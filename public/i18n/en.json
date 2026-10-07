@@ -57,6 +57,7 @@
     "paragraphs": [
       "DiffScope is free software. Anyone can use, study, and improve it, or create their own plugins, tools, and workflows.",
       "We believe creative tools should be free from restrictive licenses and closed ecosystems, with creators and developers helping to shape their direction.",
+      "DiffScope can synthesize singing voices entirely on your device and also lets you connect to online services when you choose, giving you control over the whole synthesis process. By contrast, some non-free singing-voice synthesis editors that depend on online services may limit that control and use uploaded project data in unexpected ways.",
       "Great creative tools are shaped by creators and developers together. Share your ideas, report issues, improve the design, or write code. Every contribution brings DiffScope closer to the creative tool we envision together."
     ]
   },
@@ -84,7 +85,7 @@
   },
   "languageName": "English",
   "announcement": {
-    "text": "This project is currently under development. Downloads will be available soon."
+    "text": "This project is currently under development. Nightly builds are available to download, but are unstable and do not yet include all features."
   },
   "downloads": {
     "title": "Downloads",
