@@ -12,7 +12,9 @@ interface Props {
 }
 const { locale } = Astro.props;
 const t = dictionaries[locale];
+const productNames: Record<string, string> = t.downloads.productNames;
 const productDescriptions: Record<string, string> = t.downloads.productDescriptions;
+const defaultProduct = configuration.products.find(({ id }) => id === configuration.defaultProduct)!;
 ---
 
 <ds-downloads-page
@@ -29,7 +31,7 @@ const productDescriptions: Record<string, string> = t.downloads.productDescripti
           configuration.products.map((product) => (
             <label class="product-entry" title={productDescriptions[product.id]}>
               <img src={product.icon} width="36" height="36" alt="" />
-              <span>{product.name}</span>
+              <span>{productNames[product.id]}</span>
               <input
                 type="radio"
                 name="download-product"
@@ -42,7 +44,14 @@ const productDescriptions: Record<string, string> = t.downloads.productDescripti
         }
       </fieldset>
     </aside>
-    <section class="releases-panel" aria-label={t.downloads.title}>
+    <section class="releases-panel" aria-labelledby="selected-product-name">
+      <header class="product-overview">
+        <img src={defaultProduct.icon} width="96" height="96" alt="" data-product-icon />
+        <div class="product-overview-copy">
+          <h2 id="selected-product-name" data-product-name>{productNames[defaultProduct.id]}</h2>
+          <p data-product-description>{productDescriptions[defaultProduct.id]}</p>
+        </div>
+      </header>
       <div class="release-tabs" role="tablist" aria-label={t.ui.channels}>
         {
           channels.map((channel, index) => (

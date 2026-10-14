@@ -51,6 +51,8 @@ test('artifact matching handles aliases, prefers installers, and excludes symbol
   assert.equal(selectArtifact([debug], { platform: 'windows', arch: 'amd64' }), undefined);
   assert.equal(selectArtifact([installer, artifact('windows', 'arm64')], { platform: 'windows' }), undefined);
   assert.equal(selectArtifact([installer], { platform: 'windows' }), installer);
+  const standalone = artifact('linux', 'amd64', 'standalone');
+  assert.equal(selectArtifact([standalone], { platform: 'linux', arch: 'amd64' }), standalone);
 });
 test('labels translate known platforms and variants while preserving architectures and unknown names', () => {
   for (const dictionary of [en, zh]) {
@@ -78,6 +80,10 @@ test('labels translate known platforms and variants while preserving architectur
     assert.equal(
       artifactLabel(artifact('windows', 'amd64', 'debug_symbols'), variants, platforms),
       `Windows amd64 ${variants.debug_symbols}`
+    );
+    assert.equal(
+      artifactLabel(artifact('linux', 'amd64', 'standalone'), variants, platforms),
+      `Linux amd64 ${variants.standalone}`
     );
   }
   assert.equal(en.downloads.variants.debug_symbols, 'Debug Symbols');

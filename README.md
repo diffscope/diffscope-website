@@ -64,7 +64,7 @@ Announcements are rendered during the build. The browser also fetches the announ
 
 ## Downloads
 
-Configure the catalog URL, enabled products, their display names and icons, and the default product in `src/data/downloads.json`. Products not in this list are never fetched or displayed. The production catalog is `https://catalogs.diffscope.org/v1`.
+Configure the catalog URL, enabled product identifiers and icons, and the default product in `src/data/downloads.json`. Define each product's localized name in `downloads.productNames` and tooltip description in `downloads.productDescriptions` in every resource under `public/i18n/`, using the product identifier as the key. Product icons are served from `public/`. Products not in the configuration are never fetched or displayed. The production catalog is `https://catalogs.diffscope.org/v1`.
 
 Each product provides `index.json` for Stable and Beta and `nightly.json` for Nightly. Each channel's first version entry is its latest release. Manifest paths are resolved relative to their index URL. Manifests supply release notes and download URLs, platforms, architectures, variants, sizes, and SHA-256 checksums.
 
@@ -72,7 +72,7 @@ The home page awaits both indexes and their latest manifests before displaying d
 
 On the downloads page, selecting a product loads its indexes and latest manifests to choose a compatible default tab and display platform warnings. Other manifests load only when their version cards are opened. The header download menu on this page loads only when opened. A hash of `#diffscope` selects the product; `#diffscope/1.0.0` also selects its channel and opens that version. Product and version identifiers are URL-encoded. Explicit version routes take priority over automatic channel selection.
 
-Windows, macOS, and Linux use their standard display names from locale resources; other platform labels and all architecture labels preserve manifest values. The `installer`, `portable`, and `debug_symbols` variants are translated; unknown variants are displayed unchanged. Automatic download selection uses browser platform and architecture hints where available, prefers installers, and excludes source archives and debug symbols. When the architecture cannot be determined unambiguously, visitors choose a file on the downloads page. Keep release selection independent of the interface and update its tests when changing this behavior.
+Windows, macOS, and Linux use their standard display names from locale resources; other platform labels and all architecture labels preserve manifest values. The `installer`, `portable`, `standalone`, and `debug_symbols` variants are translated; unknown variants are displayed unchanged. Automatic download selection uses browser platform and architecture hints where available, prefers installers, and excludes source archives and debug symbols. When the architecture cannot be determined unambiguously, visitors choose a file on the downloads page. Keep release selection independent of the interface and update its tests when changing this behavior.
 
 ## Deployment
 

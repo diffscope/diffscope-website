@@ -51,6 +51,11 @@ SPDX-FileCopyrightText = "Team OpenVPI"
 SPDX-License-Identifier = "CC-BY-SA-4.0"
 
 [[annotations]]
+path = "public/brand/dspm-icon.svg"
+SPDX-FileCopyrightText = "Team OpenVPI"
+SPDX-License-Identifier = "CC-BY-SA-4.0"
+
+[[annotations]]
 path = "public/brand/logo-dark.png"
 SPDX-FileCopyrightText = "Team OpenVPI"
 SPDX-License-Identifier = "CC-BY-SA-4.0"

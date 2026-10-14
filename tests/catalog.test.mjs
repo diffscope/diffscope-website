@@ -9,7 +9,7 @@ import { manifest, releaseFixture } from './fixtures/releases.mjs';
 const config = {
   catalogBaseUrl: 'https://catalog.test/v1',
   defaultProduct: 'diffscope',
-  products: [{ id: 'diffscope', name: 'DiffScope', icon: '/icon.png' }],
+  products: [{ id: 'diffscope', icon: '/icon.png' }],
 };
 
 test('manifest paths resolve relative to their index', () => {

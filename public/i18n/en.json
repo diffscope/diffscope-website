@@ -90,8 +90,10 @@
   "downloads": {
     "title": "Downloads",
     "products": "Choose a product",
+    "productNames": { "diffscope": "DiffScope", "dspm": "DiffScope Package Manager" },
     "productDescriptions": {
-      "diffscope": "A free, professional singing-voice synthesis editor"
+      "diffscope": "A free, professional singing-voice synthesis editor",
+      "dspm": "A command-line tool for managing DiffScope packages"
     },
     "loading": "Loading releases…",
     "loadingVersion": "Loading download details…",
@@ -110,7 +112,12 @@
     "fileDetails": "{size} · SHA-256: {checksum}",
     "invalidRoute": "The requested product or version is not available.",
     "requiresJavaScript": "Enable JavaScript to load releases and download files.",
-    "variants": { "installer": "Installer", "portable": "Portable", "debug_symbols": "Debug Symbols" },
+    "variants": {
+      "installer": "Installer",
+      "portable": "Portable",
+      "standalone": "Standalone",
+      "debug_symbols": "Debug Symbols"
+    },
     "platforms": { "windows": "Windows", "macos": "macOS", "linux": "Linux" }
   },
   "placeholder": {

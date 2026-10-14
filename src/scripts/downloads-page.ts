@@ -91,6 +91,14 @@ class DownloadsPage extends HTMLElement {
     const hash = downloadHash(this.product, version);
     if (location.hash !== hash) history.pushState(null, '', hash);
   }
+  private renderProduct() {
+    const product = downloadConfiguration.products.find(({ id }) => id === this.product)!;
+    const names: Record<string, string> = this.strings.downloads.productNames;
+    const descriptions: Record<string, string> = this.strings.downloads.productDescriptions;
+    this.querySelector<HTMLImageElement>('[data-product-icon]')!.src = product.icon;
+    this.querySelector<HTMLElement>('[data-product-name]')!.textContent = names[product.id];
+    this.querySelector<HTMLElement>('[data-product-description]')!.textContent = descriptions[product.id];
+  }
   private status(message: string, loading = false, retry?: () => void) {
     this.state.replaceChildren();
     this.state.hidden = !message;
@@ -116,6 +124,7 @@ class DownloadsPage extends HTMLElement {
     routeWarning.textContent = this.strings.downloads.invalidRoute;
     if (this.product !== route.product || !this.index) {
       this.product = route.product;
+      this.renderProduct();
       this.index = undefined;
       const epoch = ++this.epoch;
       this.list.replaceChildren();

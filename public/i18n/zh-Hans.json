@@ -90,8 +90,10 @@
   "downloads": {
     "title": "下载",
     "products": "选择产品",
+    "productNames": { "diffscope": "DiffScope", "dspm": "DiffScope 包管理器" },
     "productDescriptions": {
-      "diffscope": "自由且专业的歌声合成编辑器"
+      "diffscope": "自由且专业的歌声合成编辑器",
+      "dspm": "用于管理 DiffScope 包的命令行工具"
     },
     "loading": "正在加载发布版本…",
     "loadingVersion": "正在加载下载详情…",
@@ -110,7 +112,7 @@
     "fileDetails": "{size} · SHA-256：{checksum}",
     "invalidRoute": "指定的产品或版本不可用。",
     "requiresJavaScript": "请启用 JavaScript 以加载发布版本并下载文件。",
-    "variants": { "installer": "安装程序", "portable": "便携版", "debug_symbols": "调试符号" },
+    "variants": { "installer": "安装程序", "portable": "便携版", "standalone": "独立版", "debug_symbols": "调试符号" },
     "platforms": { "windows": "Windows", "macos": "macOS", "linux": "Linux" }
   },
   "placeholder": {

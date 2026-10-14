@@ -90,8 +90,10 @@
   "downloads": {
     "title": "ダウンロード",
     "products": "製品を選択",
+    "productNames": { "diffscope": "DiffScope", "dspm": "DiffScope パッケージマネージャー" },
     "productDescriptions": {
-      "diffscope": "自由でプロフェッショナルな歌声合成エディター"
+      "diffscope": "自由でプロフェッショナルな歌声合成エディター",
+      "dspm": "DiffScope のパッケージを管理するコマンドラインツール"
     },
     "loading": "リリースを読み込み中…",
     "loadingVersion": "ダウンロード情報を読み込み中…",
@@ -110,7 +112,12 @@
     "fileDetails": "{size} · SHA-256: {checksum}",
     "invalidRoute": "指定された製品またはバージョンは利用できません。",
     "requiresJavaScript": "リリースの読み込みとファイルのダウンロードには JavaScript を有効にしてください。",
-    "variants": { "installer": "インストーラー", "portable": "ポータブル版", "debug_symbols": "デバッグシンボル" },
+    "variants": {
+      "installer": "インストーラー",
+      "portable": "ポータブル版",
+      "standalone": "スタンドアロン版",
+      "debug_symbols": "デバッグシンボル"
+    },
     "platforms": { "windows": "Windows", "macos": "macOS", "linux": "Linux" }
   },
   "placeholder": {
