@@ -29,7 +29,18 @@ export interface VersionEntry {
 }
 export type ProductIndex = Record<Channel, VersionEntry[]>;
 export type LatestReleases = Partial<Record<Channel, ReleaseManifest>>;
-export const downloadConfiguration = configuration;
+export interface DownloadProduct {
+  id: string;
+  icon: string;
+  thirdParty?: boolean;
+  repositoryUrl?: string;
+}
+export interface DownloadConfiguration {
+  catalogBaseUrl: string;
+  defaultProduct: string;
+  products: DownloadProduct[];
+}
+export const downloadConfiguration: DownloadConfiguration = configuration;
 
 const object = (value: unknown): Record<string, unknown> => {
   if (!value || typeof value !== 'object' || Array.isArray(value)) throw new Error('Invalid catalog object');
@@ -92,7 +103,10 @@ export function parseManifest(value: unknown, entry: VersionEntry, channel: Chan
   };
 }
 
-export function createCatalogClient(config = configuration, fetcher: typeof fetch = fetch) {
+export function createCatalogClient(
+  config: DownloadConfiguration = downloadConfiguration,
+  fetcher: typeof fetch = fetch
+) {
   const indexes = new Map<string, Promise<ProductIndex>>();
   const manifests = new Map<string, Promise<ReleaseManifest>>();
   async function json(url: string, optional = false) {

@@ -5,7 +5,7 @@
  */
 import { Icon } from 'astro-icon/components';
 import { dictionaries, type Locale } from '~/i18n';
-import configuration from '~/data/downloads.json';
+import { downloadConfiguration as configuration } from '~/utils/catalog';
 import { channels } from '~/utils/downloads.mjs';
 interface Props {
   locale: Locale;
@@ -31,7 +31,10 @@ const defaultProduct = configuration.products.find(({ id }) => id === configurat
           configuration.products.map((product) => (
             <label class="product-entry" title={productDescriptions[product.id]}>
               <img src={product.icon} width="36" height="36" alt="" />
-              <span>{productNames[product.id]}</span>
+              <span class="product-entry-copy">
+                <span class="product-entry-name">{productNames[product.id]}</span>
+                {product.thirdParty && <span class="third-party-badge">{t.downloads.thirdParty}</span>}
+              </span>
               <input
                 type="radio"
                 name="download-product"
@@ -48,8 +51,25 @@ const defaultProduct = configuration.products.find(({ id }) => id === configurat
       <header class="product-overview">
         <img src={defaultProduct.icon} width="96" height="96" alt="" data-product-icon />
         <div class="product-overview-copy">
-          <h2 id="selected-product-name" data-product-name>{productNames[defaultProduct.id]}</h2>
+          <div class="product-title">
+            <h2 id="selected-product-name" data-product-name>{productNames[defaultProduct.id]}</h2>
+            <span class="third-party-badge" data-product-third-party hidden={!defaultProduct.thirdParty}>
+              {t.downloads.thirdParty}
+            </span>
+          </div>
           <p data-product-description>{productDescriptions[defaultProduct.id]}</p>
+          <a
+            class="product-repository"
+            data-product-repository
+            href={defaultProduct.repositoryUrl}
+            hidden={!defaultProduct.repositoryUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <Icon name="tabler:brand-github" class="size-4" aria-hidden="true" />
+            {t.downloads.viewRepository}
+            <Icon name="tabler:arrow-up-right" class="size-3" aria-hidden="true" />
+          </a>
         </div>
       </header>
       <div class="release-tabs" role="tablist" aria-label={t.ui.channels}>

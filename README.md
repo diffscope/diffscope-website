@@ -66,6 +66,8 @@ Announcements are rendered during the build. The browser also fetches the announ
 
 Configure the catalog URL, enabled product identifiers and icons, and the default product in `src/data/downloads.json`. Define each product's localized name in `downloads.productNames` and tooltip description in `downloads.productDescriptions` in every resource under `public/i18n/`, using the product identifier as the key. Product icons are served from `public/`. Products not in the configuration are never fetched or displayed. The production catalog is `https://catalogs.diffscope.org/v1`.
 
+Each product can optionally set `thirdParty` (a boolean, defaulting to `false`) to show a localized third-party label in the product picker and beside the selected product's name. Set `repositoryUrl` to its GitHub repository URL to show a repository button below the description. Omit `repositoryUrl` to hide the button. The selected product's icon, name, description, label, and repository link update together when the product changes, including through hash navigation.
+
 Each product provides `index.json` for Stable and Beta and `nightly.json` for Nightly. Each channel's first version entry is its latest release. Manifest paths are resolved relative to their index URL. Manifests supply release notes and download URLs, platforms, architectures, variants, sizes, and SHA-256 checksums.
 
 The home page awaits both indexes and their latest manifests before displaying download details. All download controls share request caches. The primary button prefers a compatible latest release in Stable, then Beta, then Nightly. If none supports the visitor's system, it offers the first available release and links to the downloads page instead of downloading a file. No releases results in a disabled Coming Soon button; request failures offer a retry.
@@ -86,5 +88,7 @@ Copyright holder: **Team OpenVPI**.
 
 - Website source code and implementation configuration are licensed under the **MIT License**.
 - Website content, including translation resources and visual assets, and repository documentation are licensed under **CC BY-SA 4.0**.
+
+The LibreSVIP icon in `public/brand/libresvip-icon.png` comes from [SoulMelody/LibreSVIP](https://github.com/SoulMelody/LibreSVIP/blob/main/packaging/assets/icon.png) and retains its upstream MIT license and copyright notice.
 
 Full license texts are in `LICENSES/MIT.txt` and `LICENSES/CC-BY-SA-4.0.txt`. Source files carry SPDX comment headers; other files are covered individually by `REUSE.toml`. Keep licensing declarations current when adding or moving files. With the REUSE tool installed, run `reuse lint` from the repository root to validate them.

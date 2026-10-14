@@ -2,7 +2,17 @@
   "catalogBaseUrl": "https://catalogs.diffscope.org/v1",
   "defaultProduct": "diffscope",
   "products": [
-    { "id": "diffscope", "icon": "/brand/icon.png" },
-    { "id": "dspm", "icon": "/brand/dspm-icon.svg" }
+    { "id": "diffscope", "icon": "/brand/icon.png", "repositoryUrl": "https://github.com/diffscope/diffscope-project" },
+    {
+      "id": "dspm",
+      "icon": "/brand/dspm-icon.svg",
+      "repositoryUrl": "https://github.com/diffscope/diffscope-package-manager"
+    },
+    {
+      "id": "libresvip-cli",
+      "icon": "/brand/libresvip-icon.png",
+      "thirdParty": true,
+      "repositoryUrl": "https://github.com/SoulMelody/LibreSVIP"
+    }
   ]
 }

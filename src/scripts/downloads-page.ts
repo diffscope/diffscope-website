@@ -98,6 +98,11 @@ class DownloadsPage extends HTMLElement {
     this.querySelector<HTMLImageElement>('[data-product-icon]')!.src = product.icon;
     this.querySelector<HTMLElement>('[data-product-name]')!.textContent = names[product.id];
     this.querySelector<HTMLElement>('[data-product-description]')!.textContent = descriptions[product.id];
+    this.querySelector<HTMLElement>('[data-product-third-party]')!.hidden = !(product.thirdParty ?? false);
+    const repository = this.querySelector<HTMLAnchorElement>('[data-product-repository]')!;
+    repository.hidden = !product.repositoryUrl;
+    if (product.repositoryUrl) repository.href = product.repositoryUrl;
+    else repository.removeAttribute('href');
   }
   private status(message: string, loading = false, retry?: () => void) {
     this.state.replaceChildren();
