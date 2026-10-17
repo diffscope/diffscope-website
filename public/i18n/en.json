@@ -90,12 +90,18 @@
   "downloads": {
     "title": "Downloads",
     "products": "Choose a product",
-    "productNames": { "diffscope": "DiffScope", "dspm": "DiffScope Package Manager", "libresvip-cli": "LibreSVIP CLI" },
+    "productNames": {
+      "diffscope": "DiffScope",
+      "dspm": "DiffScope Package Manager",
+      "dssp": "DiffSinger Synthesis Program",
+      "libresvip-cli": "LibreSVIP CLI"
+    },
     "thirdParty": "Third-Party Product",
     "viewRepository": "View on GitHub",
     "productDescriptions": {
       "diffscope": "A free, professional singing-voice synthesis editor",
       "dspm": "A command-line tool for managing DiffScope packages",
+      "dssp": "A service that provides DiffSinger singing voice synthesis and audio analysis through the DiffScope Synthesis Platform API",
       "libresvip-cli": "A universal converter for singing-voice-synthesis projects. It can be used alongside DiffScope."
     },
     "loading": "Loading releases…",

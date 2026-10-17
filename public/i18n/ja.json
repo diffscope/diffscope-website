@@ -93,6 +93,7 @@
     "productNames": {
       "diffscope": "DiffScope",
       "dspm": "DiffScope パッケージマネージャー",
+      "dssp": "DiffSinger 合成プログラム",
       "libresvip-cli": "LibreSVIP CLI"
     },
     "thirdParty": "サードパーティ製品",
@@ -100,6 +101,7 @@
     "productDescriptions": {
       "diffscope": "自由でプロフェッショナルな歌声合成エディター",
       "dspm": "DiffScope のパッケージを管理するコマンドラインツール",
+      "dssp": "DiffScope 合成プラットフォーム API を通じて DiffSinger による歌声合成と音声解析を提供するサービス",
       "libresvip-cli": "歌声合成プロジェクトの汎用変換ツール。DiffScope と併せて利用できます。"
     },
     "loading": "リリースを読み込み中…",

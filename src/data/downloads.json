@@ -8,6 +8,7 @@
       "icon": "/brand/dspm-icon.svg",
       "repositoryUrl": "https://github.com/diffscope/diffscope-package-manager"
     },
+    { "id": "dssp", "icon": "/brand/dssp-icon.svg" },
     {
       "id": "libresvip-cli",
       "icon": "/brand/libresvip-icon.png",
