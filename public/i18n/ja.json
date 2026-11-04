@@ -125,6 +125,7 @@
       "installer": "インストーラー",
       "portable": "ポータブル版",
       "standalone": "スタンドアロン版",
+      "appimage": "AppImage",
       "debug_symbols": "デバッグシンボル"
     },
     "platforms": { "windows": "Windows", "macos": "macOS", "linux": "Linux" }

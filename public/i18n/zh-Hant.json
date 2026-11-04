@@ -125,6 +125,7 @@
       "installer": "安裝程式",
       "portable": "免安裝版",
       "standalone": "獨立版",
+      "appimage": "AppImage",
       "debug_symbols": "偵錯符號"
     },
     "platforms": { "windows": "Windows", "macos": "macOS", "linux": "Linux" }

@@ -125,6 +125,7 @@
       "installer": "Installer",
       "portable": "Portable",
       "standalone": "Standalone",
+      "appimage": "AppImage",
       "debug_symbols": "Debug Symbols"
     },
     "platforms": { "windows": "Windows", "macos": "macOS", "linux": "Linux" }
