@@ -7,4 +7,4 @@ import links from './links.json';
 
 export const site = links;
 
-export const featureIcons = ['tabler:music', 'tabler:plug-connected', 'tabler:sparkles'];
+export const featureIcons = ['tabler:music', 'tabler:plug-connected', 'tabler:topology-star'];
