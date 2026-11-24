@@ -47,8 +47,8 @@
         "description": "Use plugins to combine different singing synthesis engines, effects, and tools, and build a workflow that suits your creative needs."
       },
       {
-        "title": "Create alongside AI",
-        "description": "Through MCP, AI can access the full editor, understand your project, edit singing voices, and operate DiffScope — becoming a partner that takes part in the creative process."
+        "title": "A connected creative workflow",
+        "description": "Connect with external applications, automation scripts, and MCP-compatible AI tools through open interfaces. Integrate DiffScope into your creative workflow and explore new creative possibilities."
       }
     ]
   },
