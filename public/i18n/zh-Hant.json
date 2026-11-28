@@ -19,7 +19,7 @@
     "github": "在 GitHub 上查看 DiffScope",
     "learnMore": "進一步了解",
     "getInvolved": "參與貢獻",
-    "otherVersions": "下載其他版本",
+    "otherVersions": "下載其他產品或版本",
     "channels": "選擇發布通道",
     "comingSoon": "即將推出",
     "unsupported": "不支援目前的作業系統",
@@ -94,6 +94,7 @@
       "diffscope": "DiffScope",
       "dspm": "DiffScope 套件管理器",
       "dssp": "DiffSinger 合成程式",
+      "diffscope-bridge": "DiffScope Bridge",
       "libresvip-cli": "LibreSVIP CLI"
     },
     "thirdParty": "第三方產品",
@@ -102,6 +103,7 @@
       "diffscope": "自由且專業的歌聲合成編輯器",
       "dspm": "用於管理 DiffScope 套件的命令列工具",
       "dssp": "透過 DiffScope 合成平台 API 提供 DiffSinger 歌聲合成與音訊分析的服務",
+      "diffscope-bridge": "用於將 DiffScope 連接到數位音訊工作站的虛擬樂器音訊外掛",
       "libresvip-cli": "歌聲合成專案的通用轉換器。可與 DiffScope 配合使用。"
     },
     "loading": "正在載入發布版本…",

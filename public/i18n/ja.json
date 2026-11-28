@@ -19,7 +19,7 @@
     "github": "GitHub で DiffScope を見る",
     "learnMore": "詳しく見る",
     "getInvolved": "開発に参加",
-    "otherVersions": "ほかのバージョンをダウンロード",
+    "otherVersions": "ほかの製品やバージョンをダウンロード",
     "channels": "リリースチャンネルを選択",
     "comingSoon": "近日公開",
     "unsupported": "お使いのシステムには対応していません",
@@ -94,6 +94,7 @@
       "diffscope": "DiffScope",
       "dspm": "DiffScope パッケージマネージャー",
       "dssp": "DiffSinger 合成プログラム",
+      "diffscope-bridge": "DiffScope Bridge",
       "libresvip-cli": "LibreSVIP CLI"
     },
     "thirdParty": "サードパーティ製品",
@@ -102,6 +103,7 @@
       "diffscope": "自由でプロフェッショナルな歌声合成エディター",
       "dspm": "DiffScope のパッケージを管理するコマンドラインツール",
       "dssp": "DiffScope 合成プラットフォーム API を通じて DiffSinger による歌声合成と音声解析を提供するサービス",
+      "diffscope-bridge": "DiffScope をデジタル・オーディオ・ワークステーションに接続する仮想楽器オーディオプラグイン",
       "libresvip-cli": "歌声合成プロジェクトの汎用変換ツール。DiffScope と併せて利用できます。"
     },
     "loading": "リリースを読み込み中…",

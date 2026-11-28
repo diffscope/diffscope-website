@@ -14,6 +14,10 @@
       "repositoryUrl": "https://github.com/diffscope/diffsinger-synthesis-program"
     },
     {
+      "id": "diffscope-bridge",
+      "icon": "/brand/diffscope-bridge-icon.svg"
+    },
+    {
       "id": "libresvip-cli",
       "icon": "/brand/libresvip-icon.png",
       "thirdParty": true,

@@ -19,7 +19,7 @@
     "github": "DiffScope on GitHub",
     "learnMore": "Learn More",
     "getInvolved": "Get Involved",
-    "otherVersions": "Download other versions",
+    "otherVersions": "Download other products or versions",
     "channels": "Choose a release channel",
     "comingSoon": "Coming Soon",
     "unsupported": "Not supported on your system",
@@ -94,6 +94,7 @@
       "diffscope": "DiffScope",
       "dspm": "DiffScope Package Manager",
       "dssp": "DiffSinger Synthesis Program",
+      "diffscope-bridge": "DiffScope Bridge",
       "libresvip-cli": "LibreSVIP CLI"
     },
     "thirdParty": "Third-Party Product",
@@ -102,6 +103,7 @@
       "diffscope": "A free, professional singing-voice synthesis editor",
       "dspm": "A command-line tool for managing DiffScope packages",
       "dssp": "A service that provides DiffSinger singing voice synthesis and audio analysis through the DiffScope Synthesis Platform API",
+      "diffscope-bridge": "A virtual instrument audio plugin that connects DiffScope to digital audio workstations",
       "libresvip-cli": "A universal converter for singing-voice-synthesis projects. It can be used alongside DiffScope."
     },
     "loading": "Loading releases…",
