@@ -32,7 +32,7 @@
   },
   "hero": {
     "slogan": "A free, professional\nsinging-voice synthesis editor",
-    "powered": "powered by DiffSinger",
+    "powered": "made for DiffSinger",
     "imageAlt": "DiffScope on a laptop, showing tracks, notes, phonemes, pitch curves, and synthesis parameters"
   },
   "features": {
